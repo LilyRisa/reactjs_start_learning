@@ -1,0 +1,24 @@
+.header{
+    border-bottom: 1px solid rgb(97, 97, 97);
+}
+.text-decoration-none{
+    text-decoration: none;
+}
+.menu-item{
+    border-radius: 0.75rem;
+    a:hover{
+        color: #f4612e !important;
+    }
+    &:hover{
+        background-color: #e9e9e9;
+        
+    }
+}
+
+.active{
+    background-color: #e9e9e9;
+    a{
+        color: #f4612e !important;
+    }
+    
+}
