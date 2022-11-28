@@ -16,13 +16,14 @@ function Home() {
     const load_data = async () => {
         let {data} = await Axios.get(endpoint);
         data = data.data;
-        
-        setStory(data);
+        return data;
     }
 
     useEffect(() => {
-        setAnimation('100')
-        load_data();
+        load_data().then(data => {
+            setAnimation('100');
+            setStory(data);
+        });
     }, [])
 
     return (

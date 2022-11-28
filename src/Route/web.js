@@ -6,4 +6,5 @@ export const web = [
     { path : '/', component : Home},
     { path : '/:url-c:id', component : Category},
     { path : '/truyen/:url-c:id', component : Story},
+    { path : '/truyen/:url-c:id/chapter-:cid', component : Story},
 ];

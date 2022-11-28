@@ -3,9 +3,13 @@ import React, { useState, useEffect } from 'react';
 
 function Loadingbar({animation}) {
     const [time, setTime] = useState(false);
-    let timer1 = setTimeout(() => {
-        setTime(true)
-    }, 4000)
+    let timer1;
+    if(animation == '100'){
+      timer1 = setTimeout(() => {
+          setTime(true)
+      }, 4000)
+    }
+    
 
     useEffect(
         () => {
