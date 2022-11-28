@@ -6,10 +6,9 @@ import {useParams} from 'react-router-dom';
 function Category() {
 
     let {url, id} = useParams();
-    console.log(url);
     return ( 
         <>
-        <Header active={`${url}-c${id}`} />
+        <Header active={`/${url}-c${id}`} />
         <div className={globalstyle('container my-2')}>
             {url}
         </div>

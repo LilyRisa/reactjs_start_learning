@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {web} from '~/Route';
 import {getCookie} from '~/Services'
+import Layout from './Views/Layout';
 
 function App() {
     return ( 
@@ -8,7 +9,7 @@ function App() {
             <Routes>
                 {web.map((route, index) => {
                     return (
-                        <Route key={index} path={route.path} element={ <route.component /> }>
+                        <Route key={index} path={route.path} element={ <Layout><route.component /></Layout> }>
 
                         </Route>
                     )
