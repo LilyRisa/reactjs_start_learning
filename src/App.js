@@ -1,11 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import {web} from '~/Route';
 import {getCookie} from '~/Services'
 import Layout from './Views/Layout';
+import {Header} from '~/Components/header'
 
 function App() {
     return ( 
-        <Router>
+        <>
+          <Header active={` `} />
             <Routes>
                 {web.map((route, index) => {
                     return (
@@ -15,7 +18,8 @@ function App() {
                     )
                 })}
             </Routes>
-        </Router> 
+        </>
+        
     );
 }
 

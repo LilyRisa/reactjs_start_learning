@@ -8,15 +8,14 @@ import {env} from '~/Config'
 import {Loadingbar} from '~/Components/loading'
 
 function Home() {
-    const [story, setStory] = useState([]);
     const [animation, setAnimation] = useState('30');
-    let endpoint = env('URL_API') + '/story?limit=10&page=1';
+    const [story, setStory] = useState([]);
+    let endpoint = env('URL_API') + '/story?limit=12&page=1';
 
 
     const load_data = async () => {
         let {data} = await Axios.get(endpoint);
         data = data.data;
-        
         
         setStory(data);
     }
@@ -28,12 +27,11 @@ function Home() {
 
     return (
         <>
-        <Header active={''} />
         <Loadingbar animation={animation} />
         <div className={globalstyle('container my-2')}>
-            <div className={globalstyle('d-flex flex-wrap')}>
+            <div className={globalstyle('d-flex flex-wrap justify-content-center')}>
                 {story.map((item, index) => {
-                    return <div className={globalstyle('col-4')} key={index}><CardButton {...item}></CardButton></div>
+                    return <div className={globalstyle('col-3 m-2')} key={index}><CardButton {...item}></CardButton></div>
                 })}
             </div>
         </div>
